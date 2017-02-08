@@ -1,27 +1,38 @@
 <div class="container">
 
-    <h2>salvar Contato</h2>
+    <h2>Salvar Contato</h2>
 
-    <form action="">
+    <form #contatoForm="ngForm">
 
         <div class="form-group">
             <label for="nome">Nome</label>
-            <input type="text" class="form-control" value="">
+            <input type="text" class="form-control"
+            required
+            name="nome" 
+            [(ngModel)]="contato.nome">
         </div>
 
         <div class="form-group">
             <label for="email">E-mail</label>
-            <input type="email" class="form-control" value="">
+            <input type="email" class="form-control"
+            required
+            name="email"
+            [(ngModel)]="contato.email">
         </div>
 
         <div class="form-group">
             <label for="telefone">telefone</label>
-            <input type="text" class="form-control" value="">
+            <input type="text" class="form-control"
+            required
+            name="telefone"
+            [ngModel]="contato.telefone">
         </div>
 
-        <button type="submit" class="btn btn-success">Salvar</button>
+        <button type="submit" class="btn btn-success" [disabled]="!contatoForm.form.valid">Salvar</button>
         <a class="btn btn-secondary" routerLink="/contato">Voltar</a>
 
     </form>
+
+    <button (click)='teste()' class="btn btn-warning">Teste</button>
 
 </div>

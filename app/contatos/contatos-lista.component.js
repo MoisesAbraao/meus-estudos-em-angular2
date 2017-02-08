@@ -11,11 +11,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var contato_service_1 = require("./contato.service");
 var ContatosListaComponent = (function () {
-    function ContatosListaComponent(ContatoService) {
-        this.ContatoService = ContatoService;
+    function ContatosListaComponent(contatoService) {
+        this.contatoService = contatoService;
     }
     ContatosListaComponent.prototype.ngOnInit = function () {
-        this.contatos = this.ContatoService.getContatos();
+        var _this = this;
+        this.contatoService.getContatos()
+            .then(function (contatos) {
+            _this.contatos = contatos;
+        }).catch(function (err) { return console.log(err); });
     };
     return ContatosListaComponent;
 }());
