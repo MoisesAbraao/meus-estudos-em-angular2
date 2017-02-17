@@ -42,7 +42,8 @@ ContatoDetalheComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'contato-detalhe',
-        templateUrl: 'contato-detalhe.component.html'
+        templateUrl: 'contato-detalhe.component.html',
+        styles: ["\n        .ng-valid[required]{\n            border: 3px solid green\n        }\n        .ng-invalid:not(form){\n            border: 3px solid red;\n        }\n            \n    "]
     }),
     __metadata("design:paramtypes", [contato_service_1.ContatoService,
         router_1.ActivatedRoute,
